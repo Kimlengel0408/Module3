@@ -1,0 +1,19 @@
+let three = "3"
+let four = "4"
+let thirty = "30"
+
+//what is the value of the following expressions?
+let addition = three + four // note correctly, because it is string
+let multiplication = three * four // correctly used
+let division = three / four // correctly used
+let subtraction = three - four // correctly used
+
+let lessThan1 = three < four // correctly used
+let lessThan2 = thirty < four
+
+console.log(addition) // "34"
+console.log(multiplication) // 12
+console.log(division) // 0.75
+console.log(subtraction) // -1
+console.log(lessThan1) // true
+console.log(lessThan2) // false
