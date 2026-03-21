@@ -7,4 +7,4 @@ let result = `${a} + ${b} is `;
   result += "greater than 10";
 }**/
 
-console.log(a+b <10 ? result += "less than 10" : result += "greater than 10");
+console.log( a + b < 10 ? `${result} is less than 10` : `${result} is greater than 10`);

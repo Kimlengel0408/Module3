@@ -1,18 +1,12 @@
-function checkJson(json) {
-  // checks json argument for validity and ensures a name property
-  try {
-    const user = JSON.parse(json); // parse string into object
-    if (!user.name) {
-      throw new SyntaxError("Incomplete data: no name"); // we can throw our own custom errors
-    }
-    return true; // returns true (valid json) if no error was thrown above
-  } catch (err) {
-    if (err instanceof SyntaxError) {
-      // once caught, we can do specific things based on error type
-      console.log("JSON Error: " + err.message);
-    } else {
-      throw err; // rethrow other non-syntax errors; invalid json will still cause a crash
-    }
-  }
-  return false; // returns false if any error occurred
-}
+// example promise. settles after 250ms with success or failure depending on random number
+const promise = new Promise((resolve, reject) => {
+  // resolve/reject are callback functions
+  if (Math.random() > 0.5)
+    setTimeout(() => resolve("Random number ok"), 250); // success
+  else setTimeout(() => reject("Random number too low"), 250); // failure
+});
+
+promise // consume the promise by responding to outcomes when they happen
+  .finally(() => console.log("Wait is over, promise has settled.")) // always prints
+  .then((result) => console.log("Success! " + result)) // prints resolve msg
+  .catch((error) => console.log("Error! " + error)); // prints reject msg
