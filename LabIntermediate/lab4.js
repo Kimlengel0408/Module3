@@ -20,6 +20,17 @@ function camelCaseLoop(cssProp) {
   return word.join("");
 }
 
-console.log(camelCaseLoop('margin-left-and-right-and-up-and-down')) // marginLeft
-console.log(camelCaseLoop('background-image')) // backgroundImage
+function camelCaseNonConditional(cssProp) {
+  cssProp = cssProp.split("-");
+  word = [];
+  for (let css of cssProp) {
+    word.push(css);
+  }
+  let cssProptemp = word[1].slice(1);
+  word[1] = word[1][0].toUpperCase() + cssProptemp;
+  return word.join("");
+}
+
+console.log(camelCaseNonConditional('margin-left-and-right-and-up-and-down')) // marginLeft
+console.log(camelCaseNonConditional('background-image')) // backgroundImage
 console.log(camelCaseLoop('display')) // display
