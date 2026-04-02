@@ -1,4 +1,4 @@
-dfunction camelCase(cssProp) {
+function camelCase(cssProp) {
     cssProp = cssProp.split("-");
     let cssProptemp = cssProp[1].slice(1);
     cssProp[1] = cssProp[1][0].toUpperCase() + cssProptemp;
