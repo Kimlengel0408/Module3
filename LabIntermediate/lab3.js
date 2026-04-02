@@ -18,12 +18,12 @@ function replaceMiddleAnimal(newValue) {
 };
 
 function findMatchingAnimals(beginsWith) { //array
-    animals.filter(product => animals[0] == beginsWith.toUpperCase());
-    return animals;
+    let animal = animals.filter(product => product[0] === beginsWith.toUpperCase());
+    return animal;
 }
 
 console.log(replaceMiddleAnimal("Crocodile"));
-console.log(findMatchingAnimals("T"));
+console.log(findMatchingAnimals("g"));
 
 
 
